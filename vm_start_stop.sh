@@ -11,7 +11,7 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 . "$DIR/variables.sh"
 
 while [ "$r" = yes ]; do
-    read -p "What would you like to do?`echo $'\n>> '`1 to Start a Virtual Machine: <<`echo $'\n>> '`2 to Stop a Virtual Machine: <<`echo $'\n>> '`3 to see what's running: <<`echo $'\n>> '`4 to see all available Virtual Machines: <<`echo $'\n>> '`C to Cancel/Exit: << `echo $'\n> '`" answer
+    read -p "What would you like to do?`echo $'\n>> '`1 to Start a Virtual Machine: <<`echo $'\n>> '`2 to Stop a Virtual Machine: <<`echo $'\n>> '`3 to see what Virtual Machines are running: <<`echo $'\n>> '`4 to see all available Virtual Machines: <<`echo $'\n>> '`C to Cancel/Exit: << `echo $'\n> '`" answer
     r=no
 
 case $answer in

@@ -10,10 +10,16 @@ START_ARRAY=(
 
 for i in "${START_ARRAY[@]}"
 do
-    read -p "Would you like to start-up VM: ${i}? (y/n) " yn
+    read -p "Would you like to start-up VM: ${i}? (y/n) `echo $'\n '`Or any other key to return to the options... `echo $'\n> '` " yn
     case $yn in
-    Y|y) start_server;;
-    N|n|*) echo -e "${BA} ${i} skipped... ${BA}"
+    Y|y) start_server
+    ;;
+    N|n) echo -e "${BA} ${i} skipped... ${BA}"
+    ;;
+    *)
+     r=yes
+     break
+     ;;
     esac
 done 
     r=yes
@@ -45,10 +51,15 @@ STOP_ARRAY=(
 for i in "${STOP_ARRAY[@]}"
 do
   
-    read -rp "Would you like to stop VM: ${i}? (y/n) " yn
+    read -rp "Would you like to stop VM: ${i}? (y/n) `echo $'\n '`Or any other key to return to the options... `echo $'\n> '` " yn
     case $yn in
     Y|y) stop_server;;
-    N|n|*) echo -e "${BA} VM: ${i} skipped... ${BA}"
+    N|n) echo -e "${BA} VM: ${i} skipped... ${BA}"
+    ;;
+    *)
+     r=yes
+     break
+     ;;
     esac
 done
     r=yes
